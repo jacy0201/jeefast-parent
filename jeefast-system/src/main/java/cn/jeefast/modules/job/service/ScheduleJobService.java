@@ -1,11 +1,11 @@
-package cn.jeefast.job.service;
+package cn.jeefast.modules.job.service;
 
 import java.util.Map;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.IService;
 
-import cn.jeefast.job.entity.ScheduleJob;
+import cn.jeefast.modules.job.entity.ScheduleJob;
 
 /**
  * 定时任务

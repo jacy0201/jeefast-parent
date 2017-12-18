@@ -1,10 +1,10 @@
-package cn.jeefast.job.utils;
+package cn.jeefast.modules.job.utils;
 
 import com.google.gson.Gson;
 
 import cn.jeefast.common.exception.RRException;
 import cn.jeefast.common.utils.Constant.ScheduleStatus;
-import cn.jeefast.job.entity.ScheduleJob;
+import cn.jeefast.modules.job.entity.ScheduleJob;
 
 import org.quartz.*;
 

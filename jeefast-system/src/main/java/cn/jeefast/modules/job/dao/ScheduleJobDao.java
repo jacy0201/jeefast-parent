@@ -1,9 +1,9 @@
-package cn.jeefast.job.dao;
+package cn.jeefast.modules.job.dao;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.plugins.Page;
 
-import cn.jeefast.job.entity.ScheduleJob;
+import cn.jeefast.modules.job.entity.ScheduleJob;
 
 import java.util.List;
 import java.util.Map;

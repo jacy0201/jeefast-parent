@@ -1,4 +1,4 @@
-package cn.jeefast.job.task;
+package cn.jeefast.modules.job.task;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.slf4j.Logger;

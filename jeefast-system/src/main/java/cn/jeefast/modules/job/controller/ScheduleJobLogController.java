@@ -1,4 +1,4 @@
-package cn.jeefast.job.controller;
+package cn.jeefast.modules.job.controller;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import com.baomidou.mybatisplus.plugins.Page;
 
 import cn.jeefast.common.utils.Query;
 import cn.jeefast.common.utils.R;
-import cn.jeefast.job.entity.ScheduleJobLog;
-import cn.jeefast.job.service.ScheduleJobLogService;
+import cn.jeefast.modules.job.entity.ScheduleJobLog;
+import cn.jeefast.modules.job.service.ScheduleJobLogService;
 
 import java.util.Map;
 

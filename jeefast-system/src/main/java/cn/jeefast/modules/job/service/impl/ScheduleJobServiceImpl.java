@@ -1,4 +1,4 @@
-package cn.jeefast.job.service.impl;
+package cn.jeefast.modules.job.service.impl;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -17,10 +17,10 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
 import cn.jeefast.common.utils.Constant.ScheduleStatus;
-import cn.jeefast.job.dao.ScheduleJobDao;
-import cn.jeefast.job.entity.ScheduleJob;
-import cn.jeefast.job.service.ScheduleJobService;
-import cn.jeefast.job.utils.ScheduleUtils;
+import cn.jeefast.modules.job.dao.ScheduleJobDao;
+import cn.jeefast.modules.job.entity.ScheduleJob;
+import cn.jeefast.modules.job.service.ScheduleJobService;
+import cn.jeefast.modules.job.utils.ScheduleUtils;
 
 @Service("scheduleJobService")
 public class ScheduleJobServiceImpl extends ServiceImpl<ScheduleJobDao, ScheduleJob> implements ScheduleJobService {

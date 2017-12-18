@@ -1,4 +1,4 @@
-package cn.jeefast.job.service.impl;
+package cn.jeefast.modules.job.service.impl;
 
 import java.util.Map;
 
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
-import cn.jeefast.job.dao.ScheduleJobLogDao;
-import cn.jeefast.job.entity.ScheduleJobLog;
-import cn.jeefast.job.service.ScheduleJobLogService;
+import cn.jeefast.modules.job.dao.ScheduleJobLogDao;
+import cn.jeefast.modules.job.entity.ScheduleJobLog;
+import cn.jeefast.modules.job.service.ScheduleJobLogService;
 
 @Service("scheduleJobLogService")
 public class ScheduleJobLogServiceImpl extends ServiceImpl<ScheduleJobLogDao, ScheduleJobLog> implements ScheduleJobLogService {

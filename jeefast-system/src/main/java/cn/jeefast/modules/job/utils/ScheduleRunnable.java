@@ -1,4 +1,4 @@
-package cn.jeefast.job.utils;
+package cn.jeefast.modules.job.utils;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.util.ReflectionUtils;

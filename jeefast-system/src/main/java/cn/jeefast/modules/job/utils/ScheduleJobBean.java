@@ -1,11 +1,11 @@
-package cn.jeefast.job.utils;
+package cn.jeefast.modules.job.utils;
 
 import com.google.gson.Gson;
 
 import cn.jeefast.common.utils.SpringContextUtils;
-import cn.jeefast.job.entity.ScheduleJob;
-import cn.jeefast.job.entity.ScheduleJobLog;
-import cn.jeefast.job.service.ScheduleJobLogService;
+import cn.jeefast.modules.job.entity.ScheduleJob;
+import cn.jeefast.modules.job.entity.ScheduleJobLog;
+import cn.jeefast.modules.job.service.ScheduleJobLogService;
 
 import org.apache.commons.lang.StringUtils;
 import org.quartz.JobExecutionContext;

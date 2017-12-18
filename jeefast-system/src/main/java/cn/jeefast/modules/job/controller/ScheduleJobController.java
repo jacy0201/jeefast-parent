@@ -1,4 +1,4 @@
-package cn.jeefast.job.controller;
+package cn.jeefast.modules.job.controller;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import cn.jeefast.common.base.BaseController;
 import cn.jeefast.common.utils.Query;
 import cn.jeefast.common.utils.R;
 import cn.jeefast.common.validator.ValidatorUtils;
-import cn.jeefast.job.entity.ScheduleJob;
-import cn.jeefast.job.service.ScheduleJobService;
+import cn.jeefast.modules.job.entity.ScheduleJob;
+import cn.jeefast.modules.job.service.ScheduleJobService;
 
 import java.util.Map;
 

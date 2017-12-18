@@ -1,12 +1,9 @@
-package cn.jeefast.job.entity;
+package cn.jeefast.modules.job.entity;
 
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
-
-import org.hibernate.validator.constraints.NotBlank;
-
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
@@ -14,63 +11,67 @@ import com.baomidou.mybatisplus.annotations.TableName;
 
 /**
  * <p>
- * 定时任务
+ * 定时任务日志
  * </p>
  *
  * @author theodo
  * @since 2017-10-28
  */
-@TableName("schedule_job")
-public class ScheduleJob extends Model<ScheduleJob> {
+@TableName("schedule_job_log")
+public class ScheduleJobLog extends Model<ScheduleJobLog> {
 
     private static final long serialVersionUID = 1L;
-    
-    /**
-	 * 任务调度参数key
-	 */
-    public static final String JOB_PARAM_KEY = "JOB_PARAM_KEY";
 
+    /**
+     * 任务日志id
+     */
+	@TableId(value="log_id", type= IdType.AUTO)
+	private Long logId;
     /**
      * 任务id
      */
-	@TableId(value="job_id", type= IdType.AUTO)
+	@TableField("job_id")
 	private Long jobId;
     /**
      * spring bean名称
      */
 	@TableField("bean_name")
-	@NotBlank(message="bean名称不能为空")
 	private String beanName;
     /**
      * 方法名
      */
 	@TableField("method_name")
-	@NotBlank(message="方法名称不能为空")
 	private String methodName;
     /**
      * 参数
      */
 	private String params;
     /**
-     * cron表达式
-     */
-	@TableField("cron_expression")
-	@NotBlank(message="cron表达式不能为空")
-	private String cronExpression;
-    /**
-     * 任务状态  0：正常  1：暂停
+     * 任务状态    0：成功    1：失败
      */
 	private Integer status;
     /**
-     * 备注
+     * 失败信息
      */
-	private String remark;
+	private String error;
+    /**
+     * 耗时(单位：毫秒)
+     */
+	private Integer times;
     /**
      * 创建时间
      */
 	@TableField("create_time")
 	private Date createTime;
 
+
+	public Long getLogId() {
+		return logId;
+	}
+
+	public void setLogId(Long logId) {
+		this.logId = logId;
+	}
 
 	public Long getJobId() {
 		return jobId;
@@ -104,14 +105,6 @@ public class ScheduleJob extends Model<ScheduleJob> {
 		this.params = params;
 	}
 
-	public String getCronExpression() {
-		return cronExpression;
-	}
-
-	public void setCronExpression(String cronExpression) {
-		this.cronExpression = cronExpression;
-	}
-
 	public Integer getStatus() {
 		return status;
 	}
@@ -120,12 +113,20 @@ public class ScheduleJob extends Model<ScheduleJob> {
 		this.status = status;
 	}
 
-	public String getRemark() {
-		return remark;
+	public String getError() {
+		return error;
 	}
 
-	public void setRemark(String remark) {
-		this.remark = remark;
+	public void setError(String error) {
+		this.error = error;
+	}
+
+	public Integer getTimes() {
+		return times;
+	}
+
+	public void setTimes(Integer times) {
+		this.times = times;
 	}
 
 	public Date getCreateTime() {
@@ -138,19 +139,20 @@ public class ScheduleJob extends Model<ScheduleJob> {
 
 	@Override
 	protected Serializable pkVal() {
-		return this.jobId;
+		return this.logId;
 	}
 
 	@Override
 	public String toString() {
-		return "ScheduleJob{" +
+		return "ScheduleJobLog{" +
+			", logId=" + logId +
 			", jobId=" + jobId +
 			", beanName=" + beanName +
 			", methodName=" + methodName +
 			", params=" + params +
-			", cronExpression=" + cronExpression +
 			", status=" + status +
-			", remark=" + remark +
+			", error=" + error +
+			", times=" + times +
 			", createTime=" + createTime +
 			"}";
 	}
