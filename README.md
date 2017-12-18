@@ -11,7 +11,6 @@ JeeFast快速开发平台是基于多个优秀的开源项目，将各个亮点�
 - 使用Hibernate Validator校验框架，轻松实现后端校验
 - 使用swagger2支持，方便使用API接口文档
 
-
 ## 如何交流、反馈、参与贡献？
 - Git仓库：https://gitee.com/theodo/jeefast
 - QQ交流群：583154815
