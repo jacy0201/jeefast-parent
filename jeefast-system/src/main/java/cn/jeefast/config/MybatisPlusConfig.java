@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
 
 @Configuration
-@MapperScan(basePackages = {"cn.jeefast.*.dao"})
+@MapperScan(basePackages = {"cn.jeefast.*.dao","cn.jeefast.modules.*.dao"})
 public class MybatisPlusConfig {
 
     /**
