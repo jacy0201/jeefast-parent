@@ -8,7 +8,7 @@
 
 	<name>jeefast-parent</name>
 	<description>www.jeefast.cn</description>
-
+	
 	<modules>
 		<module>jeefast-common</module>
 		<module>jeefast-system</module>
