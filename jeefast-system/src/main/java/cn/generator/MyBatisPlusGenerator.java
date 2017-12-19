@@ -57,19 +57,19 @@ public class MyBatisPlusGenerator {
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("123456");
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/jeefast?characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/jeefast11?characterEncoding=utf8");
         mpg.setDataSource(dsc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
          //strategy.setTablePrefix(new String[]{"pf_"});// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-         //strategy.setInclude(new String[] { "pf_notice" }); // 需要生成的表
+        strategy.setInclude(new String[] { "pf_notice" }); // 需要生成的表
         // 排除生成的表
-        strategy.setExclude(new String[]{"qrtz_blob_triggers","qrtz_calendars","qrtz_cron_triggers",
+        /*strategy.setExclude(new String[]{"qrtz_blob_triggers","qrtz_calendars","qrtz_cron_triggers",
         		                         "qrtz_fired_triggers","qrtz_job_details","qrtz_locks",
         		                         "qrtz_paused_trigger_grps","qrtz_scheduler_state","qrtz_simple_triggers",
-        		                         "qrtz_simprop_triggers","qrtz_triggers"}); 
+        		                         "qrtz_simprop_triggers","qrtz_triggers"}); */
         // 自定义实体父类
      	// strategy.setSuperEntityClass("com.baomidou.demo.TestEntity");
      	// 自定义实体，公共字段
@@ -91,12 +91,12 @@ public class MyBatisPlusGenerator {
         // 注意不同的模块生成时要修改对应模块包名
         PackageConfig pc = new PackageConfig();
         pc.setParent(null);
-        pc.setEntity("cn.jeefast.system.entity");
-        pc.setMapper("cn.jeefast.system.dao");
-        pc.setXml("cn.jeefast.system.dao.mapping");
-        pc.setService("cn.jeefast.system.service");        
-        pc.setServiceImpl("cn.jeefast.system.service.impl");    
-        pc.setController("cn.jeefast.system.controller");     
+        pc.setEntity("cn.jeefast.modules.platform.entity");
+        pc.setMapper("cn.jeefast.modules.platform.dao");
+        pc.setXml("cn.jeefast.modules.platform.dao.mapping");
+        pc.setService("cn.jeefast.modules.platform.service");        
+        pc.setServiceImpl("cn.jeefast.modules.platform.service.impl");    
+        pc.setController("cn.jeefast.modules.platform.controller");     
         mpg.setPackageInfo(pc);
 
         // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值
