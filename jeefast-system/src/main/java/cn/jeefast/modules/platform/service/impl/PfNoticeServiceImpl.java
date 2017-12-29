@@ -31,5 +31,10 @@ public class PfNoticeServiceImpl extends ServiceImpl<PfNoticeDao, PfNotice> impl
 		page.setRecords(pfNoticeDao.queryPageList(page, map));
 		return page;
 	}
+
+	@Override
+	public void deleteBatch(Long[] noticeIds) {
+		pfNoticeDao.deleteBatch(noticeIds);
+	}
 	
 }

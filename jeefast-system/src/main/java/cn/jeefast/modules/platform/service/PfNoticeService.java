@@ -18,5 +18,7 @@ import com.baomidou.mybatisplus.service.IService;
 public interface PfNoticeService extends IService<PfNotice> {
 
 	Page<PfNotice> queryPageList(Page<PfNotice> pageUtil, Map<String, Object> map);
+
+	void deleteBatch(Long[] noticeIds);
 	
 }

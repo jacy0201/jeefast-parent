@@ -20,5 +20,6 @@ public interface PfNoticeDao extends BaseMapper<PfNotice> {
 
 	List<PfNotice> queryPageList(Page<PfNotice> page, Map<String, Object> map);
 
+	void deleteBatch(Long[] noticeIds);
 		
 }

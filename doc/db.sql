@@ -93,6 +93,17 @@ CREATE TABLE `sys_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=`InnoDB` DEFAULT CHARACTER SET utf8 COMMENT='系统日志';
 
+-- 系统通知
+CREATE TABLE `pf_notice` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT '序列',
+  `title` varchar(255) DEFAULT NULL COMMENT '标题',
+  `type` int(11) DEFAULT NULL COMMENT '类型',
+  `content` text COMMENT '内容',
+  `publish_time` datetime DEFAULT NULL COMMENT '发布时间',
+  `creater` bigint(11) DEFAULT NULL COMMENT '创建人',
+  PRIMARY KEY (`id`)
+) ENGINE=`InnoDB` DEFAULT CHARACTER SET utf8 COMMENT='系统通知';
+
 -- 初始数据
 INSERT INTO `sys_user` (`user_id`, `username`, `password`, `salt`, `email`, `mobile`, `status`, `create_time`) VALUES ('1', 'admin', 'cdac762d0ba79875489f6a8b430fa8b5dfe0cdd81da38b80f02f33328af7fd4a', 'YzcmCZNvbXocrsz9dm8e', 'admin@jeefast.cn', '13812345678', '1', '2017-11-01 11:11:11');
 

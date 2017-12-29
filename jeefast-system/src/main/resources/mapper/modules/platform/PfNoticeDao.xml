@@ -9,9 +9,33 @@
 		<result column="type" property="type" />
 		<result column="content" property="content" />
 		<result column="publish_time" property="publishTime" />
-		<result column="create_time" property="createTime" />
 		<result column="creater" property="creater" />
-		<result column="pic" property="pic" />
 	</resultMap>
+	
+	<select id="queryPageList" resultType="cn.jeefast.modules.platform.entity.PfNotice">
+		select pn.* , su.`username` createrName
+		from pf_notice pn 
+		LEFT JOIN sys_user su ON su.`user_id`=pn.`creater`
+		<where>
+			<if test="title != null and title.trim() != ''">
+				and pn.`title` like concat('%',#{title},'%')
+			</if>
+		</where>
+		<choose>
+			<when test="sidx != null and sidx.trim() != ''">
+				order by pn.${sidx} ${order}
+			</when>
+			<otherwise>
+				order by pn.id desc
+			</otherwise>
+		</choose>
+	</select>
+	
+	<delete id="deleteBatch">
+		delete from pf_notice where id in 
+		<foreach item="noticeIds" collection="array" open="(" separator="," close=")">
+			#{noticeIds}
+		</foreach>
+	</delete>
 
 </mapper>

@@ -45,19 +45,14 @@ public class PfNotice extends Model<PfNotice> {
 	@TableField("publish_time")
 	private Date publishTime;
     /**
-     * 创建时间
-     */
-	@TableField("create_time")
-	private Date createTime;
-    /**
      * 创建人
      */
 	private Long creater;
-    /**
-     * 图片
-     */
-	private Integer pic;
-
+	/**
+	 * 创建人名称
+	 */
+	@TableField(exist=false)
+	private String createrName;
 
 	public Long getId() {
 		return id;
@@ -98,15 +93,7 @@ public class PfNotice extends Model<PfNotice> {
 	public void setPublishTime(Date publishTime) {
 		this.publishTime = publishTime;
 	}
-
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
+	
 	public Long getCreater() {
 		return creater;
 	}
@@ -114,13 +101,13 @@ public class PfNotice extends Model<PfNotice> {
 	public void setCreater(Long creater) {
 		this.creater = creater;
 	}
-
-	public Integer getPic() {
-		return pic;
+	
+	public String getCreaterName() {
+		return createrName;
 	}
 
-	public void setPic(Integer pic) {
-		this.pic = pic;
+	public void setCreaterName(String createrName) {
+		this.createrName = createrName;
 	}
 
 	@Override
@@ -136,9 +123,7 @@ public class PfNotice extends Model<PfNotice> {
 			", type=" + type +
 			", content=" + content +
 			", publishTime=" + publishTime +
-			", createTime=" + createTime +
 			", creater=" + creater +
-			", pic=" + pic +
 			"}";
 	}
 }
